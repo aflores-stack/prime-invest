@@ -39,7 +39,7 @@ export function PrestamypeLanding() {
   function handleClick(event: React.MouseEvent<HTMLDivElement>) {
     if (!(event.target instanceof HTMLElement)) return;
     const button = event.target.closest<HTMLElement>("[data-action]");
-    const action = button?.dataset.action;
+    const action = button?.dataset["action"];
     if (action === "simulate") setPanel("simulation");
     if (action === "video") setPanel("video");
     if (action === "register") window.location.assign(signup);
