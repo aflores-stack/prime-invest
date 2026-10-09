@@ -158,7 +158,7 @@ body { font-family: Poppins, Arial, sans-serif; letter-spacing: 0; }
 .prestamype-original-button.prestamype-original-size { display: revert; height: revert; padding: revert; font-size: revert; border-radius: revert; font-weight: revert; gap: revert; white-space: revert; }
 .prestamype-control.prestamype-original-button { display: inline-flex; align-items: center; justify-content: center; background: var(--brand-action); color: var(--primary-foreground); border: 1px solid var(--brand-action); border-radius: 8px; font-family: Inter, Arial, sans-serif; font-weight: 600; line-height: 1.5; cursor: pointer; }
 .prestamype-control-normal.prestamype-original-button { padding: 9px 16px; min-height: 40px; font-size: 14px; }
-.prestamype-control-large.prestamype-original-button { padding: 12px 20px; min-height: 48px; font-size: 16px; }
+.prestamype-control-large.prestamype-original-button { padding: 12px 20px; min-height: 48px; font-size: 16px; width:fit-content; justify-self:start; }
 .prestamype-control-outline.prestamype-original-button { background: var(--background); color: var(--foreground); }
 .prestamype-control.prestamype-original-button:hover { background: var(--brand-action-hover); color: var(--primary-foreground); }
 .investment-disclosure { background: var(--brand-surface); padding: 14px 0; }
@@ -167,6 +167,10 @@ body { font-family: Poppins, Arial, sans-serif; letter-spacing: 0; }
 .prestamype-page .nav-dropdown-menu.is-open { display: block; }
 .prestamype-page .swiper-wrapper { transition: transform 300ms ease; }
 .prestamype-page .img-slider-customer { transition: transform 300ms ease; }
+.prestamype-page .ribon-stats_container-slider .swiper-slide { width:100%; margin-right:0; }
+.prestamype-page .ribon-stats_container-slider .swiper-wrapper { height:auto; }
+.prestamype-page .visible-option-card__badge { width:fit-content; }
+.prestamype-page .slider-type .swiper-slide { width:calc((100% - 48px) / 3); flex-shrink:0; }
 .prestamype-page .nav-menu-right > .prestamype-control { display:none; }
 .simulator-backdrop { position:fixed; inset:0; z-index:2000; background:var(--brand-overlay); }
 .simulator-panel { position:fixed; top:0; right:0; bottom:0; width:min(520px,100%); overflow:auto; background:var(--background); padding:36px; box-shadow:0 0 30px var(--brand-shadow); }
@@ -192,5 +196,6 @@ body { font-family: Poppins, Arial, sans-serif; letter-spacing: 0; }
   .prestamype-page .nav-collapse.mobile-open .nav-left { display:block; }
   .prestamype-page .nav-collapse.mobile-open .nav-dropdown-menu { position:static; width:100%; }
   .simulator-panel { padding:24px; }
+  .prestamype-page .slider-type .swiper-slide { width:100%; margin-right:24px; }
 }
 @media(prefers-reduced-motion:reduce){ .prestamype-page * { transition:none; animation:none; } }
