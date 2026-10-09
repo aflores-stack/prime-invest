@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "./lib/prestamype/original.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -62,14 +63,22 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.5rem;
+  --brand-action: oklch(0.674 0.17 156);
+  --brand-action-hover: oklch(0.6 0.15 156);
+  --brand-ink: oklch(0.343 0.047 171);
+  --brand-highlight: oklch(0.735 0.181 156);
+  --brand-link: oklch(0.652 0.191 251);
+  --brand-surface: oklch(0.988 0.01 163);
+  --brand-shadow: oklch(0.2 0 0 / 16%);
+  --brand-overlay: oklch(0.2 0 0 / 45%);
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.35 0.024 247);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
+  --primary: var(--brand-action);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
@@ -142,3 +151,51 @@
     color: var(--color-foreground);
   }
 }
+
+/* Faithful Prestamype controls; original page CSS is preserved above. */
+body { font-family: Poppins, Arial, sans-serif; letter-spacing: 0; }
+.prestamype-page { background: var(--background); color: var(--foreground); }
+.prestamype-original-button.prestamype-original-size { display: revert; height: revert; padding: revert; font-size: revert; border-radius: revert; font-weight: revert; gap: revert; white-space: revert; }
+.prestamype-control.prestamype-original-button { display: inline-flex; align-items: center; justify-content: center; background: var(--brand-action); color: var(--primary-foreground); border: 1px solid var(--brand-action); border-radius: 8px; font-family: Inter, Arial, sans-serif; font-weight: 600; line-height: 1.5; cursor: pointer; }
+.prestamype-control-normal.prestamype-original-button { padding: 9px 16px; min-height: 40px; font-size: 14px; }
+.prestamype-control-large.prestamype-original-button { padding: 12px 20px; min-height: 48px; font-size: 16px; width:fit-content; justify-self:start; }
+.prestamype-control-outline.prestamype-original-button { background: var(--background); color: var(--foreground); }
+.prestamype-control.prestamype-original-button:hover { background: var(--brand-action-hover); color: var(--primary-foreground); }
+.investment-disclosure { background: var(--brand-surface); padding: 14px 0; }
+.investment-disclosure p { font: 400 13px/1.65 Poppins,Arial,sans-serif; color: var(--brand-ink); margin-block: 0; }
+.prestamype-page .nav-dropdown:focus-within > .nav-dropdown-menu, .prestamype-page .nav-dropdown:hover > .nav-dropdown-menu { display: block; }
+.prestamype-page .nav-dropdown-menu.is-open { display: block; }
+.prestamype-page .swiper-wrapper { transition: transform 300ms ease; }
+.prestamype-page .img-slider-customer { transition: transform 300ms ease; }
+.prestamype-page .ribon-stats_container-slider .swiper-slide { width:100%; margin-right:0; }
+.prestamype-page .ribon-stats_container-slider .swiper-wrapper { height:auto; }
+.prestamype-page .visible-option-card__badge { width:fit-content; }
+.prestamype-page .slider-type .swiper-slide { width:calc((100% - 48px) / 3); flex-shrink:0; }
+.prestamype-page .nav-menu-right > .prestamype-control { display:none; }
+.simulator-backdrop { position:fixed; inset:0; z-index:2000; background:var(--brand-overlay); }
+.simulator-panel { position:fixed; top:0; right:0; bottom:0; width:min(520px,100%); overflow:auto; background:var(--background); padding:36px; box-shadow:0 0 30px var(--brand-shadow); }
+.simulator-heading { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:36px; }
+.simulator-heading h2 { font-size:24px; font-weight:600; }
+.simulator-fields { display:grid; gap:24px; }
+.simulator-field { display:grid; gap:8px; font-size:14px; }
+.simulator-field input,.simulator-field select { width:100%; border:1px solid var(--input); border-radius:8px; padding:14px; background:var(--background); color:var(--foreground); }
+.currency-options { display:flex; gap:8px; }
+.currency-options > * { flex:1; }
+.simulator-minimum { font-size:12px; }
+.simulator-result { margin-top:24px; padding:20px; background:var(--brand-surface); border:1px solid var(--border); border-radius:8px; }
+.simulator-result strong { display:block; margin-top:12px; font-size:24px; color:var(--brand-ink); }
+.simulator-result p { margin-top:12px; font-size:12px; line-height:1.6; }
+.simulator-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+.video-dialog { position:fixed; inset:15% 5% auto; max-width:900px; margin:auto; background:var(--background); padding:16px; border-radius:8px; }
+.video-dialog iframe { width:100%; aspect-ratio:16/9; border:0; }
+.video-close { display:flex; justify-content:flex-end; margin-bottom:8px; }
+@media(max-width:767px){
+  .investment-disclosure p { padding-inline:20px; font-size:12px; }
+  .prestamype-page .nav-menu-right > .prestamype-control { display:inline-flex; }
+  .prestamype-page .nav-collapse.mobile-open { display:block; position:absolute; top:74px; left:0; width:100%; background:var(--background); padding:20px; }
+  .prestamype-page .nav-collapse.mobile-open .nav-left { display:block; }
+  .prestamype-page .nav-collapse.mobile-open .nav-dropdown-menu { position:static; width:100%; }
+  .simulator-panel { padding:24px; }
+  .prestamype-page .slider-type .swiper-slide { width:100%; margin-right:24px; }
+}
+@media(prefers-reduced-motion:reduce){ .prestamype-page * { transition:none; animation:none; } }
