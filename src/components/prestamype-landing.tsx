@@ -30,7 +30,21 @@ export function PrestamypeLanding() {
 
   const content = useMemo(() => parse(originalHtml, {
     replace(node) {
-      if (!(node instanceof Element) || node.name !== "button") return;
+      if (!(node instanceof Element)) return;
+      if (node.attribs["class"] === "investment-disclosure") return <></>;
+      if (node.attribs["class"] === "banner-info") {
+        const disclosure = originalHtml.match(/<div class="investment-disclosure">([\s\S]*?)<\/div>/)?.[1];
+        return <div {...attributesToProps(node.attribs)}>
+          {domToReact(node.children as DOMNode[], {
+            replace(child) {
+              if (!(child instanceof Element) || child.name !== "button") return;
+              return <Button {...attributesToProps(child.attribs)} variant="original" size="original">{domToReact(child.children as DOMNode[])}</Button>;
+            },
+          })}
+          {disclosure && <div className="investment-disclosure">{parse(disclosure)}</div>}
+        </div>;
+      }
+      if (node.name !== "button") return;
       const props = attributesToProps(node.attribs);
       return <Button {...props} variant="original" size="original">{domToReact(node.children as DOMNode[])}</Button>;
     },

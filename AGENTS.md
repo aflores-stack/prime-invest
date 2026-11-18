@@ -14,3 +14,4 @@
 - Serve the requested landing at /invertir-factoring and redirect / there; this keeps the preview entry point aligned with the requested URL.
 - Preserve the reference calculator's existing formula separately from landing copy; this keeps text changes from silently changing financial behavior.
 - Group factoring considerations into one checklist followed by two side-by-side opportunity lists and a separate risk notice after FAQ; this preserves the supplied information hierarchy without changing the calculator or brand assets.
+- Render the existing hero disclosure inside the hero text column, with block text and an unbroken risk link; this keeps it on the shared background without flex layout splitting the link.
