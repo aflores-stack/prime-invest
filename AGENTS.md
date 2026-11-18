@@ -13,3 +13,4 @@
 - Host copied images and fonts through asset pointers; this avoids hotlinks and keeps the original appearance portable.
 - Serve the requested landing at /invertir-factoring and redirect / there; this keeps the preview entry point aligned with the requested URL.
 - Preserve the reference calculator's existing formula separately from landing copy; this keeps text changes from silently changing financial behavior.
+- Group factoring considerations into one checklist followed by two side-by-side opportunity lists and a separate risk notice after FAQ; this preserves the supplied information hierarchy without changing the calculator or brand assets.
