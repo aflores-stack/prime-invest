@@ -223,14 +223,19 @@ body { font-family: Poppins, Arial, sans-serif; letter-spacing: 0; }
 .investment-option { min-width: 0; padding: 20px; border: 1px solid var(--border); border-radius: 8px; background: var(--brand-surface); }
 .investment-option-protected { border-color: var(--brand-action); }
 .investment-option ul { display: grid; gap: 12px; margin: 0; padding-inline-start: 20px; }
-.investment-protected-note { margin-top: 20px; font-size: 13px; }
+.investment-protected-options > .investment-protected-note { margin-top: 20px; font-size: 13px; }
 .investment-faq-list { display: grid; gap: 0; margin-top: 24px; }
 .investment-faq-item { border-bottom: 1px solid var(--border); }
 .investment-faq-item:first-child { border-top: 1px solid var(--border); }
 .investment-faq-item summary { padding: 18px 32px 18px 0; color: var(--brand-ink); font-size: 16px; font-weight: 600; line-height: 1.5; cursor: pointer; }
 .investment-faq-item p { padding: 0 0 18px; }
 .investment-testimonial-disclosure { max-width: 620px; margin: 12px 0 0; color: var(--muted-foreground); font-size: 13px; line-height: 1.6; }
-.investment-legal-notice { padding: 20px 0; color: var(--brand-ink); font-size: 12px; line-height: 1.7; }
+.investment-company-details,
+.investment-legal-notice,
+.investment-copyright { color: var(--brand-ink); font-size: 12px; line-height: 1.7; }
+.investment-company-details { padding: 20px 0 0; }
+.investment-legal-notice { padding: 12px 0; }
+.investment-copyright { padding: 0 0 20px; }
 @media(max-width:767px){
   .investment-risk-grid,
   .investment-options-grid { grid-template-columns: minmax(0, 1fr); }
